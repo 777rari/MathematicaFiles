@@ -1,0 +1,937 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35032,        929]
+NotebookOptionsPosition[     32202,        874]
+NotebookOutlinePosition[     32602,        890]
+CellTagsIndexPosition[     32559,        887]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Isaac  Lewis 
+5/1/24
+M3 Oscillating Motion\
+\>", "Section",
+ CellChangeTimes->{{3.9235789131196527`*^9, 
+  3.923578939434764*^9}},ExpressionUUID->"63756518-77c0-4a79-9e7e-\
+8b1131812fb9"],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.923572836907625*^9, 3.923572839579685*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"bd8b4bd0-7d0d-462f-8fcb-93d7b028a3ca"],
+
+Cell["\<\
+First  We  Solve  the  differential  equation  for  oscillatory  motion\
+\>", "Text",
+ CellChangeTimes->{{3.923578375611388*^9, 3.92357839664072*^9}, {
+  3.923578521472067*^9, 
+  3.923578530584816*^9}},ExpressionUUID->"e09d8375-a1f6-4234-9a21-\
+0191350f0287"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sol", "=", 
+   RowBox[{"DSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"m", " ", 
+          RowBox[{
+           RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+         RowBox[{"b", " ", 
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+         RowBox[{"k", " ", 
+          RowBox[{"x", "[", "t", "]"}]}]}], "==", "0"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "==", "1"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+     RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"xt", "=", 
+  RowBox[{
+   RowBox[{"x", "[", "t", "]"}], "/.", 
+   RowBox[{"sol", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"vt", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{"xt", ",", "t"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"at", "=", 
+  RowBox[{"D", "[", 
+   RowBox[{"vt", ",", "t"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.923574285500803*^9, 3.923574317272648*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"d0f24195-ee66-40de-83c9-6fe641460957"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "b"}], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["b", "m"]}], "-", 
+        FractionBox[
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]], "m"]}], ")"}], " ", "t"}]]}],
+    "+", 
+   RowBox[{"b", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["b", "m"]}], "+", 
+        FractionBox[
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]], "m"]}], ")"}], " ", "t"}]]}],
+    "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["b", "m"]}], "-", 
+        FractionBox[
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]], "m"]}], ")"}], " ", "t"}]], 
+    " ", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["b", "2"], "-", 
+      RowBox[{"4", " ", "k", " ", "m"}]}]]}], "+", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["b", "m"]}], "+", 
+        FractionBox[
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]], "m"]}], ")"}], " ", "t"}]], 
+    " ", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["b", "2"], "-", 
+      RowBox[{"4", " ", "k", " ", "m"}]}]]}]}], 
+  RowBox[{"2", " ", 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["b", "2"], "-", 
+     RowBox[{"4", " ", "k", " ", "m"}]}]]}]]], "Output",
+ CellChangeTimes->{3.923574270757704*^9, 3.923574319157137*^9, 
+  3.923574827172512*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"db8d0c15-0a52-4da0-9136-008273bf20ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "xt", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[7]:=",ExpressionUUID->"5d730a09-1094-4963-bfb2-41aa3ffdf755"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "+", 
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]]}], ")"}], " ", "t"}], 
+      RowBox[{"2", " ", "m"}]]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"b", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{
+           SqrtBox[
+            RowBox[{
+             SuperscriptBox["b", "2"], "-", 
+             RowBox[{"4", " ", "k", " ", "m"}]}]], " ", "t"}], "m"]]}], 
+       ")"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{
+           SqrtBox[
+            RowBox[{
+             SuperscriptBox["b", "2"], "-", 
+             RowBox[{"4", " ", "k", " ", "m"}]}]], " ", "t"}], "m"]]}], ")"}],
+       " ", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["b", "2"], "-", 
+        RowBox[{"4", " ", "k", " ", "m"}]}]]}]}], ")"}]}], 
+  RowBox[{"2", " ", 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["b", "2"], "-", 
+     RowBox[{"4", " ", "k", " ", "m"}]}]]}]]], "Output",
+ CellChangeTimes->{
+  3.923574270757704*^9, 3.923574319157137*^9, {3.9235748271784573`*^9, 
+   3.923574853001762*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"ee723f48-c049-4ddf-b950-3c83c692b244"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "vt", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[6]:=",ExpressionUUID->"c88eb6bb-3550-4281-82df-0e28a889866a"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "+", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox["b", "2"], "-", 
+            RowBox[{"4", " ", "k", " ", "m"}]}]]}], ")"}], " ", "t"}], 
+       RowBox[{"2", " ", "m"}]]}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox["b", "2"], "-", 
+           RowBox[{"4", " ", "k", " ", "m"}]}]], " ", "t"}], "m"]]}], ")"}], 
+    " ", "k"}], 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["b", "2"], "-", 
+     RowBox[{"4", " ", "k", " ", "m"}]}]]]}]], "Output",
+ CellChangeTimes->{
+  3.923574270757704*^9, 3.923574319157137*^9, {3.9235748271848993`*^9, 
+   3.923574848569121*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"5be56903-99b8-4a31-b620-9e1a51e87dec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "at", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[5]:=",ExpressionUUID->"3a76a92e-e277-4077-ac0a-c29fd473748c"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "+", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox["b", "2"], "-", 
+            RowBox[{"4", " ", "k", " ", "m"}]}]]}], ")"}], " ", "t"}], 
+       RowBox[{"2", " ", "m"}]]}]], " ", "k", " ", 
+    RowBox[{"(", 
+     RowBox[{"b", "-", 
+      RowBox[{"b", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        FractionBox[
+         RowBox[{
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox["b", "2"], "-", 
+            RowBox[{"4", " ", "k", " ", "m"}]}]], " ", "t"}], "m"]]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{
+              SuperscriptBox["b", "2"], "-", 
+              RowBox[{"4", " ", "k", " ", "m"}]}]], " ", "t"}], "m"]]}], 
+        ")"}], " ", 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["b", "2"], "-", 
+         RowBox[{"4", " ", "k", " ", "m"}]}]]}]}], ")"}]}], 
+   RowBox[{"2", " ", "m", " ", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["b", "2"], "-", 
+      RowBox[{"4", " ", "k", " ", "m"}]}]]}]]}]], "Output",
+ CellChangeTimes->{3.9235748401866693`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"478d967e-e76d-41f2-b7c7-287862cf9f18"]
+}, Open  ]],
+
+Cell["\<\
+Then  we  use  that  equation  to  model  position , velocity, and  \
+acceleration  through  time .\
+\>", "Text",
+ CellChangeTimes->{{3.923578535070673*^9, 
+  3.92357857150443*^9}},ExpressionUUID->"a8d63285-de7b-49ff-8b4d-\
+862c2d8f153f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"sol", "=", 
+      RowBox[{"DSolve", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"m", " ", 
+             RowBox[{
+              RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+            RowBox[{"b", " ", 
+             RowBox[{
+              RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+            RowBox[{"k", " ", 
+             RowBox[{"x", "[", "t", "]"}]}]}], "==", "0"}], ",", 
+          RowBox[{
+           RowBox[{"x", "[", "0", "]"}], "==", "5"}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+        RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"xt", "=", 
+      RowBox[{
+       RowBox[{"x", "[", "t", "]"}], "/.", " ", 
+       RowBox[{"sol", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"vt", "=", 
+      RowBox[{"D", "[", 
+       RowBox[{"xt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"at", "=", 
+      RowBox[{"D", "[", 
+       RowBox[{"vt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"xt", ",", "vt", ",", "at"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+       RowBox[{"PlotRange", "->", "All"}], ",", 
+       RowBox[{"PlotLegends", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<x(t)\>\"", ",", "\"\<v(t)\>\"", ",", "\"\<a(t)\>\""}], 
+         "}"}]}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"b", ",", "0.5", ",", "\"\<Damping Coefficient (b)\>\""}], 
+       "}"}], ",", "0", ",", "100", ",", "0.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1.00", ",", "\"\<Spring Constant (k) [N/m]\>\""}], 
+       "}"}], ",", "0.1", ",", "10", ",", "0.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"m", ",", "10.0", ",", "\"\<Mass (m) [kg]\>\""}], "}"}], ",", 
+      "0.1", ",", "20", ",", "0.1"}], "}"}]}], "]"}], "\n"}]], "Input",
+ CellChangeTimes->{{3.9235733081100817`*^9, 3.92357330811523*^9}, {
+  3.92357422672725*^9, 3.923574230207266*^9}, {3.923574455093204*^9, 
+  3.923574484912609*^9}, {3.923575242225369*^9, 3.923575243885827*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"16ec4344-1480-42f9-b7f0-6f14cf6c453a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 3.2, $CellContext`k$$ = 
+    1., $CellContext`m$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 0.5, "Damping Coefficient (b)"}, 0, 100, 0.1, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`k$$], 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 0.1,
+       ControlType -> Manipulator}, {{
+       Hold[$CellContext`m$$], 10., "Mass (m) [kg]"}, 0.1, 20, 0.1, 
+      ControlType -> Manipulator}}, Typeset`size$$ = {421., {107., 111.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0.5, $CellContext`k$$ = 
+        1., $CellContext`m$$ = 10.}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol = 
+        DSolve[{$CellContext`m$$ 
+             Derivative[2][$CellContext`x][$CellContext`t] + $CellContext`b$$ 
+             Derivative[
+              1][$CellContext`x][$CellContext`t] + $CellContext`k$$ \
+$CellContext`x[$CellContext`t] == 0, $CellContext`x[0] == 5, 
+           Derivative[1][$CellContext`x][0] == 0}, 
+          $CellContext`x[$CellContext`t], $CellContext`t]; $CellContext`xt = 
+        ReplaceAll[
+          $CellContext`x[$CellContext`t], 
+          Part[$CellContext`sol, 1]]; $CellContext`vt = 
+        D[$CellContext`xt, $CellContext`t]; $CellContext`at = 
+        D[$CellContext`vt, $CellContext`t]; 
+       Plot[{$CellContext`xt, $CellContext`vt, $CellContext`at}, \
+{$CellContext`t, 0, 100}, PlotRange -> All, 
+         PlotLegends -> {"x(t)", "v(t)", "a(t)"}]), 
+      "Specifications" :> {{{$CellContext`b$$, 0.5, 
+          "Damping Coefficient (b)"}, 0, 100, 
+         0.1}, {{$CellContext`k$$, 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 
+         0.1}, {{$CellContext`m$$, 10., "Mass (m) [kg]"}, 0.1, 20, 0.1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{465., {193., 199.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.9235733108620462`*^9, {3.923574239332666*^9, 3.923574242178652*^9}, 
+   3.92357448617315*^9, 3.923574902880908*^9, 3.9235752465278482`*^9, 
+   3.923575486929579*^9, {3.923575718699586*^9, 3.923575719303244*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"88195eb6-8064-41cc-866e-921de503f400"]
+}, Open  ]],
+
+Cell["\<\
+As  you  increase  the  damping  coefficient  you  go  from  underdamped  \
+motion, to  critically  damped  motion, then  to  overdamped  motion\
+\>", "Text",
+ CellChangeTimes->{{3.923575306613843*^9, 3.9235753866857243`*^9}, 
+   3.9235754344550753`*^9},ExpressionUUID->"d0325df0-b1e6-413e-b3fd-\
+2ca0281e93e5"],
+
+Cell["In  this  graph  we  will  see  underdamped  motion", "Text",
+ CellChangeTimes->{{3.923575821716506*^9, 
+  3.923575851096694*^9}},ExpressionUUID->"0c4aa832-efdf-4dae-a04b-\
+25fb73c68963"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "=", 
+     RowBox[{"DSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"m", " ", 
+            RowBox[{
+             RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"b", " ", 
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"k", " ", 
+            RowBox[{"x", "[", "t", "]"}]}]}], "==", "0"}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", "5"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+       RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"xt", "=", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], "/.", " ", 
+      RowBox[{"sol", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vt", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"xt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"at", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"vt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"xt", ",", "vt", ",", "at"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+      RowBox[{"PlotRange", "->", "All"}], ",", 
+      RowBox[{"PlotLegends", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<x(t)\>\"", ",", "\"\<v(t)\>\"", ",", "\"\<a(t)\>\""}], 
+        "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "0.5", ",", "\"\<Damping Coefficient (b)\>\""}], "}"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1.00", ",", "\"\<Spring Constant (k) [N/m]\>\""}], 
+      "}"}], ",", "0.1", ",", "10", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "10.0", ",", "\"\<Mass (m) [kg]\>\""}], "}"}], ",", 
+     "0.1", ",", "20", ",", "0.1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.923575519736444*^9, 3.923575522634666*^9}, {
+  3.923575770870817*^9, 3.923575777087422*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"83aadfd9-f448-43f4-b830-839dd880ce6f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 0.5, $CellContext`k$$ = 
+    1., $CellContext`m$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 0.5, "Damping Coefficient (b)"}, ControlType -> 
+      InputField}, {{
+       Hold[$CellContext`k$$], 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 0.1,
+       ControlType -> Manipulator}, {{
+       Hold[$CellContext`m$$], 10., "Mass (m) [kg]"}, 0.1, 20, 0.1, 
+      ControlType -> Manipulator}}, Typeset`size$$ = {421., {107., 111.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0.5, $CellContext`k$$ = 
+        1., $CellContext`m$$ = 10.}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol = 
+        DSolve[{$CellContext`m$$ 
+             Derivative[2][$CellContext`x][$CellContext`t] + $CellContext`b$$ 
+             Derivative[
+              1][$CellContext`x][$CellContext`t] + $CellContext`k$$ \
+$CellContext`x[$CellContext`t] == 0, $CellContext`x[0] == 5, 
+           Derivative[1][$CellContext`x][0] == 0}, 
+          $CellContext`x[$CellContext`t], $CellContext`t]; $CellContext`xt = 
+        ReplaceAll[
+          $CellContext`x[$CellContext`t], 
+          Part[$CellContext`sol, 1]]; $CellContext`vt = 
+        D[$CellContext`xt, $CellContext`t]; $CellContext`at = 
+        D[$CellContext`vt, $CellContext`t]; 
+       Plot[{$CellContext`xt, $CellContext`vt, $CellContext`at}, \
+{$CellContext`t, 0, 100}, PlotRange -> All, 
+         PlotLegends -> {"x(t)", "v(t)", "a(t)"}]), 
+      "Specifications" :> {{{$CellContext`b$$, 0.5, 
+          "Damping Coefficient (b)"}}, {{$CellContext`k$$, 1., 
+          "Spring Constant (k) [N/m]"}, 0.1, 10, 
+         0.1}, {{$CellContext`m$$, 10., "Mass (m) [kg]"}, 0.1, 20, 0.1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{465., {177., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9235757800630293`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"c1c67c05-7a35-48f2-96be-83aeab7c2000"]
+}, Open  ]],
+
+Cell["In  this  graph  we  will  see  critically  damped  motion", "Text",
+ CellChangeTimes->{{3.923575857500021*^9, 
+  3.9235758811933613`*^9}},ExpressionUUID->"bde600ff-1259-4890-9e2a-\
+3bf18ef9539f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "=", 
+     RowBox[{"DSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"m", " ", 
+            RowBox[{
+             RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"b", " ", 
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"k", " ", 
+            RowBox[{"x", "[", "t", "]"}]}]}], "==", "0"}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", "5"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+       RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"xt", "=", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], "/.", " ", 
+      RowBox[{"sol", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vt", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"xt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"at", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"vt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"xt", ",", "vt", ",", "at"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+      RowBox[{"PlotRange", "->", "All"}], ",", 
+      RowBox[{"PlotLegends", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<x(t)\>\"", ",", "\"\<v(t)\>\"", ",", "\"\<a(t)\>\""}], 
+        "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "7.5", ",", "\"\<Damping Coefficient (b)\>\""}], 
+      "}"}], ",", "0", ",", "100", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1.00", ",", "\"\<Spring Constant (k) [N/m]\>\""}], 
+      "}"}], ",", "0.1", ",", "10", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "10.0", ",", "\"\<Mass (m) [kg]\>\""}], "}"}], ",", 
+     "0.1", ",", "20", ",", "0.1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.923575814911405*^9, 3.9235758178157883`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"d5481966-8b61-4f37-bbc0-30daa75312ed"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 7.5, $CellContext`k$$ = 
+    1., $CellContext`m$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 7.5, "Damping Coefficient (b)"}, 0, 100, 0.1, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`k$$], 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 0.1,
+       ControlType -> Manipulator}, {{
+       Hold[$CellContext`m$$], 10., "Mass (m) [kg]"}, 0.1, 20, 0.1, 
+      ControlType -> Manipulator}}, Typeset`size$$ = {421., {109., 113.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 7.5, $CellContext`k$$ = 
+        1., $CellContext`m$$ = 10.}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol = 
+        DSolve[{$CellContext`m$$ 
+             Derivative[2][$CellContext`x][$CellContext`t] + $CellContext`b$$ 
+             Derivative[
+              1][$CellContext`x][$CellContext`t] + $CellContext`k$$ \
+$CellContext`x[$CellContext`t] == 0, $CellContext`x[0] == 5, 
+           Derivative[1][$CellContext`x][0] == 0}, 
+          $CellContext`x[$CellContext`t], $CellContext`t]; $CellContext`xt = 
+        ReplaceAll[
+          $CellContext`x[$CellContext`t], 
+          Part[$CellContext`sol, 1]]; $CellContext`vt = 
+        D[$CellContext`xt, $CellContext`t]; $CellContext`at = 
+        D[$CellContext`vt, $CellContext`t]; 
+       Plot[{$CellContext`xt, $CellContext`vt, $CellContext`at}, \
+{$CellContext`t, 0, 100}, PlotRange -> All, 
+         PlotLegends -> {"x(t)", "v(t)", "a(t)"}]), 
+      "Specifications" :> {{{$CellContext`b$$, 7.5, 
+          "Damping Coefficient (b)"}, 0, 100, 
+         0.1}, {{$CellContext`k$$, 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 
+         0.1}, {{$CellContext`m$$, 10., "Mass (m) [kg]"}, 0.1, 20, 0.1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{465., {182., 187.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.923575884215981*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"96247fff-a955-4e1a-b9a2-a6dd76055742"]
+}, Open  ]],
+
+Cell["In  this  graph  we  will  see  overdamped  motion", "Text",
+ CellChangeTimes->{{3.9235758950918818`*^9, 
+  3.923575913987369*^9}},ExpressionUUID->"f61efa64-a919-447e-8393-\
+e37f22367cf2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "=", 
+     RowBox[{"DSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"m", " ", 
+            RowBox[{
+             RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"b", " ", 
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+           RowBox[{"k", " ", 
+            RowBox[{"x", "[", "t", "]"}]}]}], "==", "0"}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", "5"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+       RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"xt", "=", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], "/.", " ", 
+      RowBox[{"sol", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vt", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"xt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"at", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{"vt", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"xt", ",", "vt", ",", "at"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+      RowBox[{"PlotRange", "->", "All"}], ",", 
+      RowBox[{"PlotLegends", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<x(t)\>\"", ",", "\"\<v(t)\>\"", ",", "\"\<a(t)\>\""}], 
+        "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "50", ",", "\"\<Damping Coefficient (b)\>\""}], "}"}],
+      ",", "0", ",", "100", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1.00", ",", "\"\<Spring Constant (k) [N/m]\>\""}], 
+      "}"}], ",", "0.1", ",", "10", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "10.0", ",", "\"\<Mass (m) [kg]\>\""}], "}"}], ",", 
+     "0.1", ",", "20", ",", "0.1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.923575985729053*^9, 3.9235759875427322`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"8655ad69-ffa7-4196-b6b6-8118b3a5cf63"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 50, $CellContext`k$$ = 
+    1., $CellContext`m$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`b$$], 50, "Damping Coefficient (b)"}, 0, 100, 0.1, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`k$$], 1., "Spring Constant (k) [N/m]"}, 0.1, 10, 0.1,
+       ControlType -> Manipulator}, {{
+       Hold[$CellContext`m$$], 10., "Mass (m) [kg]"}, 0.1, 20, 0.1, 
+      ControlType -> Manipulator}}, Typeset`size$$ = {421., {109., 113.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 50, $CellContext`k$$ = 
+        1., $CellContext`m$$ = 10.}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`sol = 
+        DSolve[{$CellContext`m$$ 
+             Derivative[2][$CellContext`x][$CellContext`t] + $CellContext`b$$ 
+             Derivative[
+              1][$CellContext`x][$CellContext`t] + $CellContext`k$$ \
+$CellContext`x[$CellContext`t] == 0, $CellContext`x[0] == 5, 
+           Derivative[1][$CellContext`x][0] == 0}, 
+          $CellContext`x[$CellContext`t], $CellContext`t]; $CellContext`xt = 
+        ReplaceAll[
+          $CellContext`x[$CellContext`t], 
+          Part[$CellContext`sol, 1]]; $CellContext`vt = 
+        D[$CellContext`xt, $CellContext`t]; $CellContext`at = 
+        D[$CellContext`vt, $CellContext`t]; 
+       Plot[{$CellContext`xt, $CellContext`vt, $CellContext`at}, \
+{$CellContext`t, 0, 100}, PlotRange -> All, 
+         PlotLegends -> {"x(t)", "v(t)", "a(t)"}]), 
+      "Specifications" :> {{{$CellContext`b$$, 50, "Damping Coefficient (b)"},
+          0, 100, 0.1}, {{$CellContext`k$$, 1., "Spring Constant (k) [N/m]"}, 
+         0.1, 10, 0.1}, {{$CellContext`m$$, 10., "Mass (m) [kg]"}, 0.1, 20, 
+         0.1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{465., {182., 187.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.923576010325451*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"44f32a14-b00d-4b45-a3e5-9a8d44c1855e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, 106}, {29, Automatic}},
+FrontEndVersion->"14.0 for Mac OS X x86 (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a1aab1fb-3faa-4cda-a6b3-ac3d9fc8bde0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 197, 7, 143, "Section",ExpressionUUID->"63756518-77c0-4a79-9e7e-8b1131812fb9"],
+Cell[780, 31, 174, 2, 30, "Input",ExpressionUUID->"bd8b4bd0-7d0d-462f-8fcb-93d7b028a3ca"],
+Cell[957, 35, 269, 6, 35, "Text",ExpressionUUID->"e09d8375-a1f6-4234-9a21-0191350f0287"],
+Cell[CellGroupData[{
+Cell[1251, 45, 1221, 36, 94, "Input",ExpressionUUID->"d0f24195-ee66-40de-83c9-6fe641460957"],
+Cell[2475, 83, 2166, 75, 77, "Output",ExpressionUUID->"db8d0c15-0a52-4da0-9136-008273bf20ea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4678, 163, 161, 3, 30, "Input",ExpressionUUID->"5d730a09-1094-4963-bfb2-41aa3ffdf755"],
+Cell[4842, 168, 1546, 51, 90, "Output",ExpressionUUID->"ee723f48-c049-4ddf-b950-3c83c692b244"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6425, 224, 161, 3, 30, "Input",ExpressionUUID->"c88eb6bb-3550-4281-82df-0e28a889866a"],
+Cell[6589, 229, 1028, 33, 90, "Output",ExpressionUUID->"5be56903-99b8-4a31-b620-9e1a51e87dec"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7654, 267, 161, 3, 30, "Input",ExpressionUUID->"3a76a92e-e277-4077-ac0a-c29fd473748c"],
+Cell[7818, 272, 1461, 46, 90, "Output",ExpressionUUID->"478d967e-e76d-41f2-b7c7-287862cf9f18"]
+}, Open  ]],
+Cell[9294, 321, 248, 6, 35, "Text",ExpressionUUID->"a8d63285-de7b-49ff-8b4d-862c2d8f153f"],
+Cell[CellGroupData[{
+Cell[9567, 331, 2568, 67, 157, "Input",ExpressionUUID->"16ec4344-1480-42f9-b7f0-6f14cf6c453a"],
+Cell[12138, 400, 3144, 61, 411, "Output",ExpressionUUID->"88195eb6-8064-41cc-866e-921de503f400"]
+}, Open  ]],
+Cell[15297, 464, 321, 6, 35, "Text",ExpressionUUID->"d0325df0-b1e6-413e-b3fd-2ca0281e93e5"],
+Cell[15621, 472, 193, 3, 35, "Text",ExpressionUUID->"0c4aa832-efdf-4dae-a04b-25fb73c68963"],
+Cell[CellGroupData[{
+Cell[15839, 479, 2341, 64, 136, "Input",ExpressionUUID->"83aadfd9-f448-43f4-b830-839dd880ce6f"],
+Cell[18183, 545, 2927, 58, 379, "Output",ExpressionUUID->"c1c67c05-7a35-48f2-96be-83aeab7c2000"]
+}, Open  ]],
+Cell[21125, 606, 202, 3, 35, "Text",ExpressionUUID->"bde600ff-1259-4890-9e2a-3bf18ef9539f"],
+Cell[CellGroupData[{
+Cell[21352, 613, 2347, 64, 136, "Input",ExpressionUUID->"d5481966-8b61-4f37-bbc0-30daa75312ed"],
+Cell[23702, 679, 2951, 58, 388, "Output",ExpressionUUID->"96247fff-a955-4e1a-b9a2-a6dd76055742"]
+}, Open  ]],
+Cell[26668, 740, 194, 3, 35, "Text",ExpressionUUID->"f61efa64-a919-447e-8393-e37f22367cf2"],
+Cell[CellGroupData[{
+Cell[26887, 747, 2345, 64, 136, "Input",ExpressionUUID->"8655ad69-ffa7-4196-b6b6-8118b3a5cf63"],
+Cell[29235, 813, 2939, 57, 388, "Output",ExpressionUUID->"44f32a14-b00d-4b45-a3e5-9a8d44c1855e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

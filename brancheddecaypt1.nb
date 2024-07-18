@@ -1,0 +1,419 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18063,        409]
+NotebookOptionsPosition[     16668,        379]
+NotebookOutlinePosition[     17063,        395]
+CellTagsIndexPosition[     17020,        392]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Isaac  Lewis
+Branched Radioactive Decay \
+\>", "Section",
+ CellChangeTimes->{{3.9238345990946007`*^9, 
+  3.923834617497998*^9}},ExpressionUUID->"8a2cbd92-face-4791-a117-\
+77f9c632edb0"],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.9238349988363132`*^9, 3.923834999251993*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"3fdbb382-336e-47bc-b9d5-68b89452dabb"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eqA", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"A", "'"}], "[", "t", "]"}], " ", "==", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "k1"}], " ", "*", " ", 
+      RowBox[{"A", "[", "t", "]"}]}], " ", "-", " ", 
+     RowBox[{"k2", " ", "*", " ", 
+      RowBox[{"A", "[", "t", "]"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqB", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"B", "'"}], "[", "t", "]"}], " ", "==", " ", 
+    RowBox[{
+     RowBox[{"k1", " ", "*", " ", 
+      RowBox[{"A", "[", "t", "]"}]}], " ", "-", " ", 
+     RowBox[{"k3", " ", "*", " ", 
+      RowBox[{"B", "[", "t", "]"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqC", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"C", "'"}], "[", "t", "]"}], " ", "==", " ", 
+    RowBox[{
+     RowBox[{"k2", "*", 
+      RowBox[{"A", "[", "t", "]"}]}], " ", "-", " ", 
+     RowBox[{"k4", "*", 
+      RowBox[{"C", "[", "t", "]"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqD", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"D", "'"}], "[", "t", "]"}], " ", "==", " ", 
+    RowBox[{
+     RowBox[{"k3", " ", "*", " ", 
+      RowBox[{"B", "[", "t", "]"}]}], " ", "+", " ", 
+     RowBox[{"k4", " ", "*", " ", 
+      RowBox[{"C", "[", "t", "]"}]}]}]}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.9238346230337667`*^9, 3.92383507875548*^9}, {
+   3.923835162144067*^9, 3.923835162575659*^9}, {3.9238352741965322`*^9, 
+   3.923835282113578*^9}, {3.9238353899141207`*^9, 3.923835394512672*^9}, 
+   3.9238355921633053`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"a57745ec-fc1d-4e7a-a995-6a8954cd017c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"initialConditions", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"A", "[", "0", "]"}], "==", "100"}], ",", 
+     RowBox[{
+      RowBox[{"B", "[", "0", "]"}], "==", "0"}], ",", 
+     RowBox[{
+      RowBox[{"C", "[", "0", "]"}], "==", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", "0", "]"}], "==", "0"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9238355982566233`*^9, 3.9238355982628937`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"166f8075-49b8-4117-bfa5-44d7b611f3aa"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"parameters", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"kAB", "->", "0.1"}], ",", 
+     RowBox[{"kAC", "->", "0.1"}], ",", 
+     RowBox[{"kBD", "->", "0.1"}], ",", 
+     RowBox[{"kCD", "->", "0.5"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.923835649919264*^9, 3.923835653770349*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"41325ac2-5155-4d51-84d3-beb487b81c34"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"soln", "=", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "eqA", ",", "eqB", ",", "eqC", ",", "eqD", ",", "initialConditions", 
+       ",", "params"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"A", ",", "B", ",", "C", ",", "D"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "50"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.923835612985447*^9, 3.92383561299028*^9}, {
+  3.923835663782967*^9, 3.92383568860494*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"c171b67a-c26e-463f-afc2-e949b4f62a4f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve", "deqn", 
+   "\"Equation or list of equations expected instead of \
+\\!\\(\\*RowBox[{\\\"True\\\"}]\\) in the first argument \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"A\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"k1\\\"}], \\\
+\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", \
+RowBox[{\\\"k2\\\", \\\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}]}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"B\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k1\\\", \\\" \\\", \
+RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\
+\"k3\\\", \\\" \\\", RowBox[{\\\"B\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"C\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k2\\\", \\\" \\\", \
+RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\
+\"k4\\\", \\\" \\\", TemplateBox[List[\\\"t\\\"], \\\"C\\\"]}]}]}], \
+\\\",\\\", RowBox[{\\\"1\\\", \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k3\\\", \
+\\\" \\\", RowBox[{\\\"B\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"+\\\", \
+RowBox[{\\\"k4\\\", \\\" \\\", TemplateBox[List[\\\"t\\\"], \\\"C\\\"]}]}]}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"A\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"100\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"B\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{TemplateBox[List[\\\"0\\\"], \\\"C\\\"], \\\"\[Equal]\\\", \
+\\\"0\\\"}], \\\",\\\", \\\"True\\\"}], \\\"}\\\"}], \\\",\\\", \
+\\\"params\\\"}], \\\"}\\\"}]\\).\"", 2, 7, 1, 27519427190693514664, "Local"},
+  
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9238357265086927`*^9},
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"63629b3d-a368-4661-973c-a1ca838a28c0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"A", "[", "t", "]"}], ",", 
+       RowBox[{"B", "[", "t", "]"}], ",", 
+       RowBox[{"C", "[", "t", "]"}], ",", 
+       RowBox[{"D", "[", "t", "]"}]}], "}"}], "/.", " ", "soln"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "50"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "->", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<A\>\"", ",", "\"\<B\>\"", ",", "\"\<C\>\"", ",", "\"\<D\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Time\>\"", ",", "\"\<Quantity\>\""}], "}"}]}], ",", 
+   RowBox[{"PlotTitle", "->", "\"\<Branching Radioactive Decay\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.923835701176474*^9, 3.923835701181445*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"ed5a35fa-d80e-4015-8c43-c05d28c4b310"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"A\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"k1\\\"}], \\\
+\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", \
+RowBox[{\\\"k2\\\", \\\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}]}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"B\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k1\\\", \\\" \\\", \
+RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\
+\"k3\\\", \\\" \\\", RowBox[{\\\"B\\\", \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}]}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"C\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k2\\\", \\\" \\\", \
+RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\
+\"k4\\\", \\\" \\\", TemplateBox[List[\\\"t\\\"], \\\"C\\\"]}]}]}], \
+\\\",\\\", RowBox[{\\\"1\\\", \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k3\\\", \
+\\\" \\\", RowBox[{\\\"B\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"+\\\", \
+RowBox[{\\\"k4\\\", \\\" \\\", TemplateBox[List[\\\"t\\\"], \\\"C\\\"]}]}]}], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"A\\\", \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"100\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"B\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{TemplateBox[List[\\\"0\\\"], \\\"C\\\"], \\\"\[Equal]\\\", \
+\\\"0\\\"}], \\\",\\\", \\\"True\\\"}], \\\"}\\\"}], \\\",\\\", \
+\\\"params\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"A\\\", \\\",\\\", \\\"B\\\", \\\",\\\", \\\"C\\\", \\\",\\\", \
+\\\"D\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"t\\\", \\\
+\",\\\", \\\"0\\\", \\\",\\\", \\\"50\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \
+\\\"}\\\"}]\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing.\"", 2, 8, 2, 27519427190693514664,
+    "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.92383573308123*^9},
+ CellLabel->
+  "During evaluation of \
+In[8]:=",ExpressionUUID->"813265ad-f4d7-49e6-a213-b7c8a8ae5fff"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot", "optx", 
+   "\"Unknown option \\!\\(\\*RowBox[{\\\"PlotTitle\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"Branching Radioactive Decay\\\\\\\"\\\"}]\\) in \\!\\(\\*RowBox[{\
+\\\"Plot\\\", \\\"[\\\", RowBox[{RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"A\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"B\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\",\\\", \
+TemplateBox[List[\\\"t\\\"], \\\"C\\\"], \\\",\\\", \\\"t\\\"}], \\\"}\\\"}], \
+\\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"NDSolve\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"A\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \\\"k1\\\"}], \\\
+\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\
+\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"-\\\", \
+RowBox[{\\\"k2\\\", \\\" \\\", RowBox[{\\\"A\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}]}]}], \\\",\\\", RowBox[{RowBox[{SuperscriptBox[\\\"B\\\", \\\"\
+\[Prime]\\\", Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k1\\\", \\\" \\\", \
+RowBox[{\\\"A\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\"k3\\\", \
+\\\" \\\", RowBox[{\\\"B\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}]}], \\\",\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"C\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]], \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", RowBox[{RowBox[{\\\"k2\\\", \\\" \\\", RowBox[{\\\"A\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}], \\\"-\\\", RowBox[{\\\"k4\\\", \\\" \\\", \
+TemplateBox[List[RowBox[List[\\\"\\\\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\\\\[RightSkeleton]\\\"]]], \\\"C\\\"]}]}]}], \\\",\\\", \
+RowBox[{\\\"1\\\", \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"k3\\\", \\\" \\\", \
+RowBox[{\\\"B\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"+\\\", RowBox[{\\\"k4\\\", \
+\\\" \\\", TemplateBox[List[RowBox[List[\\\"\\\\[LeftSkeleton]\\\", \
+\\\"1\\\", \\\"\\\\[RightSkeleton]\\\"]]], \\\"C\\\"]}]}]}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"A\\\", \\\"[\\\", \\\"0\\\", \
+\\\"]\\\"}], \\\"\[Equal]\\\", \\\"100\\\"}], \\\",\\\", \
+RowBox[{RowBox[{\\\"B\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{TemplateBox[List[\\\"0\\\"], \\\"C\\\"], \\\"\[Equal]\\\", \
+\\\"0\\\"}], \\\",\\\", \\\"True\\\"}], \\\"}\\\"}], \\\",\\\", \
+\\\"params\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"A\\\", \\\",\\\", \\\"B\\\", \\\",\\\", \\\"C\\\", \\\",\\\", \
+\\\"D\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"t\\\", \\\
+\",\\\", \\\"0\\\", \\\",\\\", \\\"50\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]}], \\\
+\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"t\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"50\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"PlotLegends\\\", \
+\\\"\[Rule]\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"A\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"B\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"C\\\\\\\"\\\", \
+\\\",\\\", \\\"\\\\\\\"D\\\\\\\"\\\"}], \\\"}\\\"}]}], \\\",\\\", \
+RowBox[{\\\"AxesLabel\\\", \\\"\[Rule]\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\\\
+\\\\\"Time\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"Quantity\\\\\\\"\\\"}], \
+\\\"}\\\"}]}], \\\",\\\", RowBox[{\\\"PlotTitle\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"Branching Radioactive Decay\\\\\\\"\\\"}]}], \\\"]\\\"}]\\).\"", 
+   2, 8, 3, 27519427190693514664, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.923835733148765*^9},
+ CellLabel->
+  "During evaluation of \
+In[8]:=",ExpressionUUID->"66cd619c-fbe9-4d64-96c9-59db3f45f81e"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", "[", "t", "]"}], ",", 
+      RowBox[{"B", "[", "t", "]"}], ",", 
+      TemplateBox[{"t"},
+       "C"], ",", "t"}], "}"}], "/.", "\[VeryThinSpace]", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["A", "\[Prime]",
+           MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "k1"}], " ", 
+           RowBox[{"A", "[", "t", "]"}]}], "-", 
+          RowBox[{"k2", " ", 
+           RowBox[{"A", "[", "t", "]"}]}]}]}], ",", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["B", "\[Prime]",
+           MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"k1", " ", 
+           RowBox[{"A", "[", "t", "]"}]}], "-", 
+          RowBox[{"k3", " ", 
+           RowBox[{"B", "[", "t", "]"}]}]}]}], ",", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["C", "\[Prime]",
+           MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"k2", " ", 
+           RowBox[{"A", "[", "t", "]"}]}], "-", 
+          RowBox[{"k4", " ", 
+           TemplateBox[{"t"},
+            "C"]}]}]}], ",", 
+        RowBox[{"1", "\[Equal]", 
+         RowBox[{
+          RowBox[{"k3", " ", 
+           RowBox[{"B", "[", "t", "]"}]}], "+", 
+          RowBox[{"k4", " ", 
+           TemplateBox[{"t"},
+            "C"]}]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"A", "[", "0", "]"}], "\[Equal]", "100"}], ",", 
+          RowBox[{
+           RowBox[{"B", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+          RowBox[{
+           TemplateBox[{"0"},
+            "C"], "\[Equal]", "0"}], ",", "True"}], "}"}], ",", "params"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"A", ",", "B", ",", "C", ",", "D"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "50"}], "}"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "50"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"A\"\>", ",", "\<\"B\"\>", ",", "\<\"C\"\>", 
+      ",", "\<\"D\"\>"}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Time\"\>", ",", "\<\"Quantity\"\>"}], "}"}]}], ",", 
+   RowBox[{"PlotTitle", "\[Rule]", "\<\"Branching Radioactive Decay\"\>"}]}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.9238357331744213`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"f51de227-abc8-43d8-83f4-5eab67586215"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 686},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.0 for Mac OS X x86 (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a2e4e02e-b220-4232-8006-4383a45d7d99"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 195, 6, 105, "Section",ExpressionUUID->"8a2cbd92-face-4791-a117-77f9c632edb0"],
+Cell[778, 30, 176, 2, 30, "Input",ExpressionUUID->"3fdbb382-336e-47bc-b9d5-68b89452dabb"],
+Cell[957, 34, 1708, 47, 115, "Input",ExpressionUUID->"a57745ec-fc1d-4e7a-a995-6a8954cd017c"],
+Cell[2668, 83, 538, 14, 30, "Input",ExpressionUUID->"166f8075-49b8-4117-bfa5-44d7b611f3aa"],
+Cell[3209, 99, 413, 10, 30, "Input",ExpressionUUID->"41325ac2-5155-4d51-84d3-beb487b81c34"],
+Cell[CellGroupData[{
+Cell[3647, 113, 605, 15, 30, "Input",ExpressionUUID->"c171b67a-c26e-463f-afc2-e949b4f62a4f"],
+Cell[4255, 130, 2189, 35, 65, "Message",ExpressionUUID->"63629b3d-a368-4661-973c-a1ca838a28c0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6481, 170, 919, 24, 73, "Input",ExpressionUUID->"ed5a35fa-d80e-4015-8c43-c05d28c4b310"],
+Cell[7403, 196, 2524, 39, 81, "Message",ExpressionUUID->"813265ad-f4d7-49e6-a213-b7c8a8ae5fff"],
+Cell[9930, 237, 4036, 60, 83, "Message",ExpressionUUID->"66cd619c-fbe9-4d64-96c9-59db3f45f81e"],
+Cell[13969, 299, 2671, 76, 119, "Output",ExpressionUUID->"f51de227-abc8-43d8-83f4-5eab67586215"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

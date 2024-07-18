@@ -1,0 +1,1156 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     50424,       1146]
+NotebookOptionsPosition[     49072,       1120]
+NotebookOutlinePosition[     49469,       1136]
+CellTagsIndexPosition[     49426,       1133]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "*", 
+     RowBox[{
+      RowBox[{"x", "''"}], "[", "t", "]"}]}], "==", 
+    RowBox[{
+     RowBox[{"-", "m"}], "*", "g"}]}], ",", 
+   RowBox[{
+    RowBox[{"x", "[", "0", "]"}], "==", "x0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "'"}], "[", "0", "]"}], "==", "v0"}], ",", 
+   RowBox[{"x", "[", "t", "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.922966102386503*^9, 3.922966169130262*^9}},
+ CellLabel->"In[96]:=",ExpressionUUID->"3e737410-22e2-49d5-acf5-6b073e7e81e8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \
+\\\", RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", \
+\\\"\\\\\\\"RecursionLimit\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", \\\"t\\\", \\\
+\"]\\\"}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \\\"9.8`\\\"}], \
+\\\" \\\", \\\"m\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"TerminatedEvaluation\
+\\\", \\\"[\\\", \\\"\\\\\\\"RecursionLimit\\\\\\\"\\\", \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", \
+\\\"\\\\\\\"RecursionLimit\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", \\\"0\\\", \\\
+\"]\\\"}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]\\) is neither a list \
+of replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"", 2, 96, 124, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.922966172358468*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"5130ea23-71e4-4b4e-af06-d20fea619d56"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \
+\\\", RowBox[{SubscriptBox[\\\"\[PartialD]\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"t\\\", \\\",\\\", \\\"2\\\"}], \\\"}\\\"}]}]], RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\
+\", RowBox[{RowBox[{\\\"Times\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\
+\")\\\"}]}], \\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\
+\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]}], \
+\\\")\\\"}]}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \\\"9.8`\\\"}], \
+\\\" \\\", \\\"m\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\")\\\"}], \\\"\
+\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{SubscriptBox[\\\"\
+\[PartialD]\\\", RowBox[{\\\"0\\\"}]], RowBox[{\\\"(\\\", \
+RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \\\", \
+RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \
+\\\"9.8`\\\"}], \\\" \\\", \\\"m\\\"}]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \\\"[\\\", \
+\\\"\\\\\\\"RecursionLimit\\\\\\\"\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \
+\\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{RowBox[{\\\"TerminatedEvaluation\\\", \
+\\\"[\\\", \\\"\\\\\\\"RecursionLimit\\\\\\\"\\\", \\\"]\\\"}], \\\"[\\\", \\\
+\"0\\\", \\\"]\\\"}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]}], \\\")\\\
+\"}]}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]\\) is neither a list of \
+replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing.\"", 2, 96, 125, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.922966172366192*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"93276f7b-1ec2-442c-8e82-08f168b4d2f6"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \
+\\\", RowBox[{SubscriptBox[\\\"\[PartialD]\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"t\\\", \\\",\\\", \\\"2\\\"}], \\\"}\\\"}]}]], RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\
+\", RowBox[{RowBox[{\\\"Times\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\
+\")\\\"}]}], \\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"ReplaceAll\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"D\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]}], \
+\\\")\\\"}]}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \\\"9.8`\\\"}], \
+\\\" \\\", \\\"m\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \\\", RowBox[{SubscriptBox[\\\"\
+\[PartialD]\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}]], RowBox[{\\\"ReplaceAll\
+\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"]\\\"}]}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\
+\"-\\\", \\\"9.8`\\\"}], \\\" \\\", \\\"m\\\"}]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\
+\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Equal\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}], \\\",\\\", RowBox[{\\\"Equal\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"Equal\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \
+\\\")\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{SubscriptBox[\\\"\[PartialD]\\\", RowBox[{\\\"0\\\"}]], \
+RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\[VeryThinSpace]\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\")\\\"}]}], \\\"\[Equal]\\\", \\\"V\
+\\\"}]}], \\\"}\\\"}]}], \\\")\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \
+\\\",\\\", RowBox[{RowBox[{SubscriptBox[\\\"\[PartialD]\\\", \
+RowBox[{\\\"0\\\"}]], RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \
+\\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"m\\\", \\\" \\\", RowBox[{\\\"D\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}], \\\"\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \\\"9.8`\\\"}], \\\" \
+\\\", \\\"m\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\
+\\\"}]}], \\\")\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{SubscriptBox[\\\"\[PartialD]\\\", RowBox[{\\\"0\\\"}]], \
+RowBox[{\\\"ReplaceAll\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\
+\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"\[Equal]\\\", \
+\\\"V\\\"}]}], \\\"}\\\"}]}], \\\")\\\"}]}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \
+\\\"}\\\"}]\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing.\"", 2, 96, 126, 
+   27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.922966172374329*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"d4be181b-23dd-4423-b833-d291ac111c0f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ReplaceAll\\\", \
+\\\"::\\\", \\\"reps\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"", 2, 96, 127, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9229661723818398`*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"aa0d0961-c8e8-4383-b25d-d7780c9a23c8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "D", "ivar", "\"\\!\\(\\*RowBox[{\\\"0\\\"}]\\) is not a valid variable.\"",
+    2, 96, 128, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9229661723877077`*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"e25d9202-5fc1-4789-9072-9de676c50481"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "D", "ivar", "\"\\!\\(\\*RowBox[{\\\"0\\\"}]\\) is not a valid variable.\"",
+    2, 96, 129, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9229661723928423`*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"24d03aa5-f3fd-460f-afe8-92490d66d5a0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "D", "ivar", "\"\\!\\(\\*RowBox[{\\\"0\\\"}]\\) is not a valid variable.\"",
+    2, 96, 130, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9229661723979807`*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"80e8de10-5eb1-4151-8147-70890bd4baec"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"D\\\", \\\"::\\\", \
+\\\"ivar\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 96, 131, 27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.922966172403796*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"707b5bb0-6db8-4432-932c-a349aed1256d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DSolve", "dsfun", 
+   "\"\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\
+\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"m\\\", \
+\\\" \\\", RowBox[{SubscriptBox[\\\"\[PartialD]\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"2\\\"}], \\\"}\\\
+\"}]}]], RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\
+\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"}\\\"}]}], \\\")\\\"}]}]}], \\\"\
+\[Equal]\\\", RowBox[{RowBox[{\\\"-\\\", \\\"9.8`\\\"}], \\\" \\\", \
+\\\"m\\\"}]}], \\\",\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \
+\\\"/.\\\", \\\"\[VeryThinSpace]\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"ReplaceAll\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"D\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}], \\\"\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]}], \
+\\\")\\\"}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{RowBox[{SubscriptBox[\\\"\[PartialD]\\\", RowBox[{\\\"0\\\"}]], \
+RowBox[{\\\"(\\\", RowBox[{\\\"0.`\\\", \\\"/.\\\", \\\"\[VeryThinSpace]\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"Equal\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"Equal\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \
+\\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"Equal\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"}\\\"}]}], \\\")\\\"}]}], \\\"\
+\[Equal]\\\", \\\"V\\\"}]}], \\\"}\\\"}]}], \\\")\\\"}], \\\"\[Equal]\\\", \\\
+\"x0\\\"}]\\) cannot be used as a function.\"", 2, 96, 132, 
+   27513701086781499981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9229661724090347`*^9},
+ CellLabel->
+  "During evaluation of \
+In[96]:=",ExpressionUUID->"28f53a7c-182a-4368-8b4a-4f92623de446"],
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", " ", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "2"}], "}"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "9.8`"}], " ", 
+            SuperscriptBox["t", "2"]}], "+", 
+           RowBox[{"2", " ", "t", " ", "V"}]}], ")"}]}], "/.", 
+        "\[VeryThinSpace]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"m", " ", 
+            RowBox[{
+             SubscriptBox["\[PartialD]", 
+              RowBox[{"{", 
+               RowBox[{"t", ",", "2"}], "}"}]], 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "9.8`"}], " ", 
+                   SuperscriptBox["t", "2"]}], "+", 
+                  RowBox[{"2", " ", "t", " ", "V"}]}], ")"}]}], "/.", 
+               "\[VeryThinSpace]", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"m", " ", 
+                   RowBox[{
+                    SubscriptBox["\[PartialD]", 
+                    RowBox[{"{", 
+                    RowBox[{"t", ",", "2"}], "}"}]], 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["1", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", 
+                    SuperscriptBox["t", "2"]}], "+", 
+                    RowBox[{"2", " ", "t", " ", "V"}]}], ")"}]}], "/.", 
+                    "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "t", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                    ")"}]}]}], "\[Equal]", 
+                  RowBox[{
+                   RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}], "\[Equal]", "0"}], ",", 
+                 RowBox[{
+                  RowBox[{
+                   SubscriptBox["\[PartialD]", "0"], 
+                   RowBox[{"(", 
+                    RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                    ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}]}], 
+           "\[Equal]", 
+           RowBox[{
+            RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"m", " ", 
+                 RowBox[{
+                  SubscriptBox["\[PartialD]", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "2"}], "}"}]], 
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}]}]}], "\[Equal]", 
+                RowBox[{
+                 RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}], "\[Equal]", "0"}], ",", 
+               RowBox[{
+                RowBox[{
+                 SubscriptBox["\[PartialD]", "0"], 
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}], "\[Equal]", 
+           "0"}], ",", 
+          RowBox[{
+           RowBox[{
+            SubscriptBox["\[PartialD]", "0"], 
+            RowBox[{"(", 
+             RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"m", " ", 
+                  RowBox[{
+                   SubscriptBox["\[PartialD]", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "2"}], "}"}]], 
+                   RowBox[{"(", 
+                    RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                    ")"}]}]}], "\[Equal]", 
+                 RowBox[{
+                  RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}], "\[Equal]", "0"}], ",", 
+                RowBox[{
+                 RowBox[{
+                  SubscriptBox["\[PartialD]", "0"], 
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}], "\[Equal]",
+            "V"}]}], "}"}]}], ")"}]}]}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"-", "g"}], " ", "m"}]}], ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"m", " ", 
+          RowBox[{
+           SubscriptBox["\[PartialD]", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "2"}], "}"}]], 
+           RowBox[{"(", 
+            RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"m", " ", 
+                 RowBox[{
+                  SubscriptBox["\[PartialD]", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "2"}], "}"}]], 
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}]}]}], "\[Equal]", 
+                RowBox[{
+                 RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}], "\[Equal]", "0"}], ",", 
+               RowBox[{
+                RowBox[{
+                 SubscriptBox["\[PartialD]", "0"], 
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}]}], 
+         "\[Equal]", 
+         RowBox[{
+          RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"m", " ", 
+               RowBox[{
+                SubscriptBox["\[PartialD]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "2"}], "}"}]], 
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}]}]}], "\[Equal]", 
+              RowBox[{
+               RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                   RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                  RowBox[{
+                   RowBox[{
+                   "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+               ")"}], "\[Equal]", "0"}], ",", 
+             RowBox[{
+              RowBox[{
+               SubscriptBox["\[PartialD]", "0"], 
+               RowBox[{"(", 
+                RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}], "\[Equal]", 
+         "0"}], ",", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\[PartialD]", "0"], 
+          RowBox[{"(", 
+           RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"m", " ", 
+                RowBox[{
+                 SubscriptBox["\[PartialD]", 
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "2"}], "}"}]], 
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}]}]}], "\[Equal]", 
+               RowBox[{
+                RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                ")"}], "\[Equal]", "0"}], ",", 
+              RowBox[{
+               RowBox[{
+                SubscriptBox["\[PartialD]", "0"], 
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}], "\[Equal]", 
+         "V"}]}], "}"}]}], ")"}], "\[Equal]", "x0"}], ",", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "0"], 
+     RowBox[{"(", 
+      RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"m", " ", 
+           RowBox[{
+            SubscriptBox["\[PartialD]", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "2"}], "}"}]], 
+            RowBox[{"(", 
+             RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"m", " ", 
+                  RowBox[{
+                   SubscriptBox["\[PartialD]", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "2"}], "}"}]], 
+                   RowBox[{"(", 
+                    RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                    ")"}]}]}], "\[Equal]", 
+                 RowBox[{
+                  RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}], "\[Equal]", "0"}], ",", 
+                RowBox[{
+                 RowBox[{
+                  SubscriptBox["\[PartialD]", "0"], 
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}]}], 
+          "\[Equal]", 
+          RowBox[{
+           RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"m", " ", 
+                RowBox[{
+                 SubscriptBox["\[PartialD]", 
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "2"}], "}"}]], 
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}]}]}], "\[Equal]", 
+               RowBox[{
+                RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                ")"}], "\[Equal]", "0"}], ",", 
+              RowBox[{
+               RowBox[{
+                SubscriptBox["\[PartialD]", "0"], 
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}], "\[Equal]", 
+          "0"}], ",", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\[PartialD]", "0"], 
+           RowBox[{"(", 
+            RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"m", " ", 
+                 RowBox[{
+                  SubscriptBox["\[PartialD]", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "2"}], "}"}]], 
+                  RowBox[{"(", 
+                   RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                   ")"}]}]}], "\[Equal]", 
+                RowBox[{
+                 RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                 ")"}], "\[Equal]", "0"}], ",", 
+               RowBox[{
+                RowBox[{
+                 SubscriptBox["\[PartialD]", "0"], 
+                 RowBox[{"(", 
+                  RowBox[{"0.`", "/.", "\[VeryThinSpace]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"m", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}]}], "\[Equal]", 
+                    RowBox[{
+                    RowBox[{"-", "9.8`"}], " ", "m"}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "\[Equal]", "0"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "TerminatedEvaluation", "[", "\<\"RecursionLimit\"\>", 
+                    "]"}], "[", "0", "]"}], "\[Equal]", "V"}]}], "}"}]}], 
+                  ")"}]}], "\[Equal]", "V"}]}], "}"}]}], ")"}]}], "\[Equal]", 
+          "V"}]}], "}"}]}], ")"}]}], "\[Equal]", "v0"}], ",", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "9.8`"}], " ", 
+       SuperscriptBox["t", "2"]}], "+", 
+      RowBox[{"2", " ", "t", " ", "V"}]}], ")"}]}], ",", "t"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.92296617242002*^9},
+ CellLabel->"Out[96]=",ExpressionUUID->"a1fea3d8-7000-4ecb-91db-1124a5bbdbd7"]
+}, Open  ]]
+},
+WindowSize->{703, 686},
+WindowMargins->{{18, Automatic}, {Automatic, 33}},
+FrontEndVersion->"14.0 for Mac OS X x86 (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"24bc81b4-4cea-48be-8632-5c47119fac3e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 569, 16, 30, "Input",ExpressionUUID->"3e737410-22e2-49d5-acf5-6b073e7e81e8"],
+Cell[1152, 40, 1093, 19, 64, "Message",ExpressionUUID->"5130ea23-71e4-4b4e-af06-d20fea619d56"],
+Cell[2248, 61, 3111, 47, 152, "Message",ExpressionUUID->"93276f7b-1ec2-442c-8e82-08f168b4d2f6"],
+Cell[5362, 110, 4349, 64, 160, "Message",ExpressionUUID->"d4be181b-23dd-4423-b833-d291ac111c0f"],
+Cell[9714, 176, 458, 10, 28, "Message",ExpressionUUID->"aa0d0961-c8e8-4383-b25d-d7780c9a23c8"],
+Cell[10175, 188, 345, 8, 28, "Message",ExpressionUUID->"e25d9202-5fc1-4789-9072-9de676c50481"],
+Cell[10523, 198, 345, 8, 28, "Message",ExpressionUUID->"24d03aa5-f3fd-460f-afe8-92490d66d5a0"],
+Cell[10871, 208, 345, 8, 28, "Message",ExpressionUUID->"80e8de10-5eb1-4151-8147-70890bd4baec"],
+Cell[11219, 218, 447, 10, 28, "Message",ExpressionUUID->"707b5bb0-6db8-4432-932c-a349aed1256d"],
+Cell[11669, 230, 2446, 38, 67, "Message",ExpressionUUID->"28f53a7c-182a-4368-8b4a-4f92623de446"],
+Cell[14118, 270, 34938, 847, 1958, "Output",ExpressionUUID->"a1fea3d8-7000-4ecb-91db-1124a5bbdbd7"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
